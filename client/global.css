@@ -1,0 +1,145 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * ClassCanvas dark theme with neon accents
+   * Deep charcoal background with teal/magenta highlights
+   */
+  :root {
+    /* Background & foreground */
+    --background: 225 25% 11%;
+    --foreground: 210 40% 98%;
+
+    /* Cards */
+    --card: 225 25% 15%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popover */
+    --popover: 225 25% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Neon Teal accent */
+    --primary: 180 100% 50%;
+    --primary-foreground: 225 25% 11%;
+
+    /* Secondary - Subtle light */
+    --secondary: 225 25% 25%;
+    --secondary-foreground: 180 100% 50%;
+
+    /* Muted - Subdued colors */
+    --muted: 225 25% 25%;
+    --muted-foreground: 210 20% 65%;
+
+    /* Accent - Magenta/Purple */
+    --accent: 290 100% 50%;
+    --accent-foreground: 225 25% 11%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border & input */
+    --border: 225 25% 25%;
+    --input: 225 25% 20%;
+    --ring: 180 100% 50%;
+
+    /* Radius */
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 225 25% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 225 25% 11%;
+    --sidebar-accent: 290 100% 50%;
+    --sidebar-accent-foreground: 225 25% 11%;
+    --sidebar-border: 225 25% 25%;
+    --sidebar-ring: 180 100% 50%;
+  }
+
+  .dark {
+    --background: 225 25% 11%;
+    --foreground: 210 40% 98%;
+    --card: 225 25% 15%;
+    --card-foreground: 210 40% 98%;
+    --popover: 225 25% 15%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 225 25% 11%;
+    --secondary: 225 25% 25%;
+    --secondary-foreground: 180 100% 50%;
+    --muted: 225 25% 25%;
+    --muted-foreground: 210 20% 65%;
+    --accent: 290 100% 50%;
+    --accent-foreground: 225 25% 11%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 225 25% 25%;
+    --input: 225 25% 20%;
+    --ring: 180 100% 50%;
+    --sidebar-background: 225 25% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 225 25% 11%;
+    --sidebar-accent: 290 100% 50%;
+    --sidebar-accent-foreground: 225 25% 11%;
+    --sidebar-border: 225 25% 25%;
+    --sidebar-ring: 180 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+@layer components {
+  .gradient-accent {
+    @apply bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600;
+  }
+
+  .card-gradient {
+    @apply bg-gradient-to-br from-slate-800 to-slate-900;
+  }
+
+  .glow-teal {
+    @apply shadow-lg shadow-cyan-500/20;
+  }
+
+  .glow-magenta {
+    @apply shadow-lg shadow-purple-600/20;
+  }
+
+  .btn-neon {
+    @apply bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-semibold px-6 py-3 rounded-lg transition-all duration-200 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50;
+  }
+
+  .btn-ghost-neon {
+    @apply border border-cyan-500/50 hover:border-cyan-500 text-cyan-400 hover:text-cyan-300 font-semibold px-6 py-3 rounded-lg transition-all duration-200;
+  }
+}
